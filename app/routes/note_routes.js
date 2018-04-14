@@ -55,7 +55,9 @@ module.exports = function (app, db) {
         db.collection(myCollection).insertMany(ingredient, (err, result) => {
             if (err) {
                 res.send({ 'error': err });
+                console.log(err);
             } else {
+                console.log(result);
                 res.send(result.ops[0]);
             }
         });
